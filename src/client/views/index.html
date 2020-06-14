@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" >
+  <title>Travel App</title>
+</head>
+
+<body>
+
+  <nav>
+    <h1>Travel Planner</h1>
+    <ul>
+      <li><a href="index.html"><i class="fa fa-home"></i>Home</a></li>
+      <li><a href="#preview">My trips preview</a></li>
+    </ul>
+  </nav>
+
+  <div class="pageHero">
+    <div class="form">
+      <div>
+        <label for="city">Destination: </label>
+        <input type="text" id="city" placeholder="Enter destination city or country" required>
+      </div>
+      <div>
+        <label for="arrival">Arrival Date: </label>
+        <input type="date" id="arrivalDate" required>
+      </div>
+      <div>
+        <label for="last">Return Date: </label>
+        <input type="date" id="last" required>
+      </div>
+      <div>
+        <h2>Flight details:</h2><br>
+        <label for="aname">Airlines Name:</label>
+        <input type="text" id="aname" placeholder="flight name" required><br>
+        <label for="flight">Flight number:</label>
+        <input type="text" id="flight" placeholder="Enter flight no." required><br>
+        <label for="time">Departure Time:</label>
+        <input type="time" id="time" placeholder="flight time" required><br>
+        <label for="departure">Depart From:</label>
+        <input type="text" id="departure" placeholder="enter departure" required>
+      </div>
+      <div class="btn">
+        <button id="generate"> Submit </button>
+      </div>
+    </div>
+
+   <div class="present">
+    <div id="preview">
+      <h1 class="title">Preview your trip details</h1>
+      <div class="content">
+        <div class="image">
+          <span id = "pixabay"></span>
+        </div>
+        <div class="infoSide">
+          <div class="flight">
+            <h2 class="title">Flight Details</h2>
+            <span id="fname"></span><br>
+            <span id="fnumber"></span><br>
+            <span id="ftime"></span><br>
+            <span id="fdepart"></span>
+          </div>
+          <div class="trip">
+            <h2 class="title">Trip Details</h2> 
+            <span id = "daysLeft"></span><br>
+            <span id="tripTime"></span><br>
+            <span id = "temperature"></span><br>
+            <span id = "date"></span><br>
+            <span id = "destination"></span><br>
+          </div>
+ 
+        </div>
+      </div>
+    </div>
+   </div>
+  </div>
+
+  <main  >
+    <div class="card">
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
+  </main>
+
+  <script>
+    // Check that service workers are supported
+    if ('serviceWorker' in navigator) {
+      // Use the window load event to keep the page load performant
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/service-worker.js');
+      });
+    }
+  </script>
+
+</body>
+</html>

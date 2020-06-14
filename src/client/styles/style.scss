@@ -1,0 +1,159 @@
+body {
+    color: #fff;
+    background: #355C7D;
+    background: linear-gradient(to right, #C06C84, #6C5B7B, #355C7D); 
+
+}
+
+nav {
+    ul {
+        list-style-type: none;
+        display: flex;
+        justify-content: space-between;
+        a {
+            text-decoration: none;
+            color:  #fff;
+            padding: 5px 20px;
+            border: 3px solid #fff;
+            border-radius: 50px;
+        }
+        a:hover {
+            text-decoration: none;
+            color:  rgb(141, 228, 124);
+            padding: 5px 25px;
+            border: 3px solid rgb(104, 250, 98);
+            border-radius: 50px;
+        
+        }
+    }
+    h1 {
+        font-size: 3rem;
+        text-align: center;
+    }
+    
+}
+
+
+
+
+
+
+
+
+.pageHero {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 40% 60%;
+
+    .form{
+        background-color: rgba(0,0,0,0.7);
+        padding: 10%;
+    }
+
+    .present {
+        background-color: rgba(0,0,0,0.3);
+        #preview {
+            .infoSide > div{
+                padding: 10%;
+            }
+        }
+
+    }
+}
+span {
+    font-size: 1.5rem;
+    padding: 20px;
+}
+#preview {
+    display: none;
+    text-align: center;
+}
+
+.flight , .trip {
+    background-color: rgba(0,0,0,0.08);
+}
+
+
+.form {
+    input[type=text], input[type=date], input[type=time]{
+        width: 100%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        box-sizing: border-box;
+        -webkit-transition: 0.5s;
+        transition: 0.5s;
+        border: none;
+        color: #fff;
+        background-color:transparent;
+        outline: none; 
+        border-bottom: 3px solid #555;      
+      
+      }
+      
+      input[type=text]:focus, input[type=date]:focus, input[type=time]:focus{
+        border-bottom: 2px solid rgb(32, 211, 85);
+        color: rgb(128, 211, 153);
+      }
+      input[type=text]:hover, input[type=date]:hover, input[type=time]:hover{
+        border-bottom: 2px solid rgb(32, 211, 85);
+        color: rgb(128, 211, 153);
+        -webkit-transition: 0.2s;
+        transition: 0.2s;
+      }
+      input[type=text]::-ms-input-placeholder,input[type=time]::-ms-input-placeholder, input[type=date]::-ms-input-placeholder{
+        color: rgb(126, 130, 151);
+      }
+      input[type=text]::placeholder , input[type=date]::placeholder, input[type=time]::placeholder{
+        color: rgb(126, 130, 151);
+      }
+      label {
+          font-size: larger;
+          color: #fff;
+          display: inline-block;
+      }
+      input {
+          display: inline-block;
+      }
+      button {
+          color: #fff;
+          background-color: transparent;
+          padding: 5px 30px;
+          border-radius: 50px;
+          margin-top: 6%;
+          font-size: 1.2rem;
+      }
+      button:hover {
+        border: 2px solid rgb(32, 211, 85);
+        color: rgb(128, 211, 153);
+        -webkit-transition: 0.5s;
+        transition: 0.5s;
+        padding: 5px 40px;
+        border-radius: 50px;
+        font-size: 1.5rem;
+      }
+      .btn {
+        display: flex;
+        justify-content: center;
+      }
+}
+
+#preview > .content {
+    display: grid;
+    grid-template-columns: 50% 50%;
+
+}
+#pixabay > img {
+    margin-top: 15%;
+    margin-right: 1%;
+    width: 90%;
+    padding: 1%;;
+    border-radius: 50px;
+
+}
+
+.title {
+    color: antiquewhite;
+    padding: 20px 0;
+    border-bottom: black 1px solid;
+    background: linear-gradient(transparent,rgba(0,0,0,0.2));
+}
