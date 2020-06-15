@@ -157,3 +157,15 @@ span {
     border-bottom: black 1px solid;
     background: linear-gradient(transparent,rgba(0,0,0,0.2));
 }
+
+
+@media(max-width:768px) {
+    .pageHero {
+        width: 100%;
+        display: block;
+    }
+    #preview > .content {
+        display: block;
+        width: 100%;
+    }
+}
