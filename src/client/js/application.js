@@ -1,9 +1,9 @@
-function form(){
-  document.getElementById('generate').addEventListener('click', performAction);
+export function form(){
+  document.getElementById('submit').addEventListener('click', task);
 
-  function performAction(e){
+  function task(e){
     let inputDate = document.getElementById('arrivalDate').value;
-    let city = document.getElementById('city').value;
+    let place = document.getElementById('city').value;
     let returnDate = document.getElementById('last').value;
     let date1 = new Date(inputDate);
     let date2 = new Date();
@@ -13,10 +13,10 @@ function form(){
     let duration = Math.ceil(trip/(1000*60*60*24));
 
     postData('http://localhost:8081/submit', {
-      arrival: inputDate, 
-      daysLeft: daysLeft,
+      tripStart: inputDate, 
+      remaining: daysLeft,
       duration: duration,
-      city: city
+      place: place
     });
 
   };
@@ -35,7 +35,7 @@ function form(){
     try {
       const data = await fetch('http://localhost:8081/items')
       const newData = await data.json();
-      updateUI();
+      UI();
     }catch(error) {
     console.log("error 1", error);
     }
@@ -43,20 +43,21 @@ function form(){
   //---------------------------------------------------------------------------------------------------------------------------
 
   //------------------------------------------------------Update UI------------------------------------------------------------
-  const updateUI = async()=>{
+  const UI = async()=>{
     const request = await fetch('http://localhost:8081/items')
     const response = await request.json();
     const dataRecieved = response[response.length-1];
     const place = document.getElementById('city').value;
-    document.getElementById('destination').innerHTML = `Your next trip is to ${place} in ${dataRecieved.country}`;
-    document.getElementById('date').innerHTML = `Arrival date: ${dataRecieved.arrival}`;
+    document.getElementById('submit').addEventListener('click', () => document.getElementById('preview').style.display="block")
+    document.getElementById('destination').innerHTML = `Your next trip is to ${place} in ${dataRecieved.destination}`;
+    document.getElementById('date').innerHTML = `Arrival date: ${dataRecieved.tripStart}`;
     document.getElementById('tripTime').innerHTML = `Your trip is ${dataRecieved.duration} days long.`;
-    document.getElementById('daysLeft').innerHTML = `Days remaining: ${dataRecieved.daysLeft} days`;
-    document.getElementById('temperature').innerHTML = `Temperature: ${dataRecieved.temp} &deg;C`;
+    document.getElementById('daysLeft').innerHTML = `Days remaining: ${dataRecieved.remaining} days`;
+    document.getElementById('temperature').innerHTML = `Temperature: ${dataRecieved.temperature} &deg;C`;
     if (dataRecieved.image !== undefined ){
-      document.getElementById('pixabay').innerHTML = `<img src= ${dataRecieved.image}>`;
+      document.getElementById('pixabay').innerHTML = `<img src= ${dataRecieved.img}>`;
     } else {
-      document.getElementById('pixabay').innerHTML = `<img src= ${dataRecieved.countryImage}>`;
+      document.getElementById('pixabay').innerHTML = `<img src= ${dataRecieved.ImgC}>`;
     }
     document.getElementById('fname').innerHTML=`You have booked "${document.getElementById('aname').value}" airlines`;
     document.getElementById('fnumber').innerHTML=`Flight no: ${document.getElementById('flight').value}`;
@@ -64,9 +65,5 @@ function form(){
     document.getElementById('fdepart').innerHTML=`From: ${document.getElementById('departure').value} <i class="fa fa-plane"></i> ${place}`;
   }
   // -------------------------------------------------------------------------------------------------------------------------
-  document.getElementById('generate').addEventListener('click', () => document.getElementById('preview').style.display="block")
+
 }
-
-export { form };
-
-
