@@ -19,7 +19,7 @@ app.use(cors());
 // Initialize the main project folder
 app.use(express.static('dist'));
 //Server set-up
-const port = process.env.PORT || 8081;
+const port = process.env.PORT || 3000;
 
 const localhost = app.listen(port, function () {
     console.log(`Travel app listening on port ${port}`);
