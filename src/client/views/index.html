@@ -17,7 +17,7 @@
   </nav>
 
   <div class="pageHero">
-    <div class="form">
+    <form id="formSubmit" class="form">
       <div>
         <label for="city">Destination: </label>
         <input type="text" id="city" placeholder="Enter destination city or country" required>
@@ -33,18 +33,19 @@
       <div>
         <h2>Flight details:</h2><br>
         <label for="aname">Airlines Name:</label>
-        <input type="text" id="aname" placeholder="flight name" required><br>
+        <input type="text" id="aname" placeholder="flight name"><br>
         <label for="flight">Flight number:</label>
-        <input type="text" id="flight" placeholder="Enter flight no." required><br>
+        <input type="text" id="flight" placeholder="Enter flight no."><br>
         <label for="time">Departure Time:</label>
-        <input type="time" id="time" placeholder="flight time" required><br>
+        <input type="time" id="time" placeholder="flight time" ><br>
         <label for="departure">Depart From:</label>
-        <input type="text" id="departure" placeholder="enter departure" required>
+        <input type="text" id="departure" placeholder="enter departure" >
       </div>
       <div class="btn">
-        <button id="submit"> Submit </button>
+        <!-- <button id="submit"> Submit </button> -->
+        <input type="submit" value="submit" id="submit">
       </div>
-    </div>
+    </form>
 
    <div class="present">
     <div id="preview">
@@ -75,22 +76,6 @@
     </div>
    </div>
   </div>
-
-  <main  >
-    <div class="card">
-      <span></span>
-      <span></span>
-      <span></span>
-      <span></span>
-      <span></span>
-      <span></span>
-      <span></span>
-      <span></span>
-      <span></span>
-      <span></span>
-    </div>
-
-  </main>
 
   <script>
     // Check that service workers are supported
